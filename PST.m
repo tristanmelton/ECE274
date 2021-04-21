@@ -79,10 +79,11 @@ Image_orig_size=size(I);
 L=0.5;
 x=linspace(-L,L,Image_orig_size(1));
 y=linspace(-L,L,Image_orig_size(2));
-[X,Y]=ndgrid(x,y);
+z=linspace(-L,L,Image_orig_size(3));
+[X,Y,Z]=ndgrid(x,y,z);
 
 % Convert cartesian X and Y vectors to polar vectors, THETA and RHO
-[THETA,RHO] = cart2pol(X,Y);
+RHO = sqrt(X.^2+Y.^2+Z.^2);
 
 % define two dimentional cartesian frequency vectors, FX and FY
 X_step=x(2)-x(1);
@@ -97,18 +98,18 @@ fy_step=fy(2)-fy(1);
 [FTHETA,FRHO] = cart2pol(FX,FY);
 
 % low pass filter the original image to reduce noise
-Image_orig_f=((fft2(I)));
+Image_orig_f=fftn(I);
 sigma=(handles.LPF)^2/log(2);
 Image_orig_f=Image_orig_f.*fftshift(exp(-(RHO/sqrt(sigma)).^2));
-Image_orig_filtered=real(ifft2((Image_orig_f)));
+Image_orig_filtered=real(ifftn((Image_orig_f)));
 
 % Constrcut the PST Kernel
 PST_Kernel=(RHO*handles.Warp_strength.*atan(RHO*handles.Warp_strength)-0.5*log(1+(RHO*handles.Warp_strength).^2));
-PST_Kernel=PST_Kernel/max(max(PST_Kernel))*handles.Phase_strength;
+PST_Kernel=PST_Kernel/max(max(max(PST_Kernel)))*handles.Phase_strength;
 
 % Apply the PST Kernel
-temp=(fft2(Image_orig_filtered)).*fftshift(exp(-1j*PST_Kernel));
-Image_orig_filtered_PST=ifft2(temp);
+temp=(fftn(Image_orig_filtered)).*fftshift(exp(-1j*PST_Kernel));
+Image_orig_filtered_PST=ifftn(temp);
 
 % Calculate phase of the transformed image
 PHI_features=angle(Image_orig_filtered_PST);
@@ -124,11 +125,11 @@ else
     
     % apply binary morphological operations to clean the transformed image
     out=features;
-    out = bwmorph(out,'thin',1);
-    out = bwperim(out,4);
-    out = bwmorph(out,'thin',1);
-    out = bwmorph(out,'clean',30);
-    out = bwmorph(out,'remove',5);
+    %out = bwmorph(out,'thin',1);
+    %out = bwperim(out,4);
+    %out = bwmorph(out,'thin',1);
+    %out = bwmorph(out,'clean',30);
+    %out = bwmorph(out,'remove',5);
     
 end
 
