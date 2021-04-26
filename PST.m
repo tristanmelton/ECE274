@@ -86,16 +86,16 @@ z=linspace(-L,L,Image_orig_size(3));
 RHO = sqrt(X.^2+Y.^2+Z.^2);
 
 % define two dimentional cartesian frequency vectors, FX and FY
-X_step=x(2)-x(1);
-fx=linspace(-0.5/X_step,0.5/X_step,length(x));
-fx_step=fx(2)-fx(1);
-Y_step=y(2)-y(1);
-fy=linspace(-0.5/Y_step,0.5/Y_step,length(y));
-fy_step=fy(2)-fy(1);
-[FX,FY]=ndgrid(fx,fy);
+%X_step=x(2)-x(1);
+%fx=linspace(-0.5/X_step,0.5/X_step,length(x));
+%fx_step=fx(2)-fx(1);
+%Y_step=y(2)-y(1);
+%fy=linspace(-0.5/Y_step,0.5/Y_step,length(y));
+%fy_step=fy(2)-fy(1);
+%[FX,FY]=ndgrid(fx,fy);
 
 % Convert cartesian vectors (FX and FY) to polar vectors, FTHETA and FRHO
-[FTHETA,FRHO] = cart2pol(FX,FY);
+%[FTHETA,FRHO] = cart2pol(FX,FY);
 
 % low pass filter the original image to reduce noise
 Image_orig_f=fftn(I);
@@ -121,7 +121,7 @@ else
     features=zeros(size(PHI_features));
     features(find(PHI_features>handles.Thresh_max))=1;
     features(find(PHI_features<handles.Thresh_min))=1;  % because output phase has both positive and negative values
-    features(find(I<max(max(I))/20))=0; % ignore the features in the very dark areas of the image
+    features(find(I<max(max(I))/10))=0; % ignore the features in the very dark areas of the image
     
     % apply binary morphological operations to clean the transformed image
     out=features;
