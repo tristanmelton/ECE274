@@ -121,7 +121,7 @@ else
     features=zeros(size(PHI_features));
     features(find(PHI_features>handles.Thresh_max))=1;
     features(find(PHI_features<handles.Thresh_min))=1;  % because output phase has both positive and negative values
-    features(find(I<max(max(I))/10))=0; % ignore the features in the very dark areas of the image
+    features(find(I<max(max(I))/9))=0; % ignore the features in the very dark areas of the image
     
     % apply binary morphological operations to clean the transformed image
     out=features;
