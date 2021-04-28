@@ -1,1 +1,4 @@
-*.tif
+/data/*
+!/data/Test_Images
+/data/Test_Images/*
+!/data/Test_Images/.keep
