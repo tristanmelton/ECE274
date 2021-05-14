@@ -19,8 +19,11 @@ function [scale_space] = dog2(image_gray, sigmas)
     
     % Scale space is difference across sigmas
     scale_space = diff(blurs, 1, 3); % Difference across last dimension (3)
+    scale_space = flip(scale_space, 3); % Fix diff ordering
     
     % Optional: Normalize scale space for better visualization
-    scale_space = scale_space / max(scale_space, [], 'all');
+    for i = 1:size(scale_space, 3)
+        scale_space = scale_space / max(abs(scale_space(:,:,i)), [], 'all');
+    end
 end
 
