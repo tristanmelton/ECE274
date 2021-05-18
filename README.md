@@ -31,7 +31,7 @@ Hint: find center of each cell then track them cells in time. Show x,y,z coordin
 
 During your presentation, pay attention to time. You need to finish in the given time. 
 
-##Deliverables:
+## Deliverables:
 1.	- [ ] Final presentations on Zoom
 2.	- [ ] Participation during presentations by other students
 3.	- [ ] All deliverables (slides, poster, codes, readme file) should be put in a zip file. The zip file should be name as: Team#_topicKeyWord.zip
