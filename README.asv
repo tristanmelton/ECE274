@@ -1,31 +1,31 @@
-## Project TODO
-1.	- [ ] Download the Matlab PST 2D code from Github Jalali Lab repository [7]. Extend the algorithm to 3D (x,y,z) – Write the code for operation of PST on a 3D.
-2.	- [ ] Analyze the 3D+T (3D plus time; vidoes) live-cell dataset available here [9]. Select at least two types (and not more than four types) of datasets from this challenge dataset collection. 
-3.	- [ ] Visualize the input and the PST output (edge maps)
-4.	- [ ] Use the PST edge maps to detect cells.
+## Instructions
+
+##Project TODO:
+1.	Download the Matlab PST 2D code from Github Jalali Lab repository [7]. Extend the algorithm to 3D (x,y,z) – Write the code for operation of PST on a 3D.
+2.	Analyze the 3D+T (3D plus time; vidoes) live-cell dataset available here [9]. Select at least two types (and not more than four types) of datasets from this challenge dataset collection. 
+3.	Visualize the input and the PST output (edge maps)
+4.	Use the PST edge maps to detect cells.
 Hint: find center of each cell then track them cells in time. Show x,y,z coordinates vs. time.
 
 
-## Presentation Stuff
-1. - [ ] Indicate topic/title, your legal name and student ID #, on first page
+##Presentation Stuff
+
+- [ ] Indicate topic/title, your legal name and student ID #, on first page
     1. Need Mark and Can's Student IDs on first Slide
-2. - [ ] Slides should be numbered
-3. - [ ] Your slide #2 should be description of how you partitioned the work within your team. What was the role of each team member. For solo teams, this is not needed. 
+- [ ] Slides should be numbered
+- [ ] Your slide #2 should be description of how you partitioned the work within your team. What was the role of each team member. For solo teams, this is not needed. 
     1. Exists but need to fill out
-4. - [ ] You will have  meetings with the Prof. during the quarter about your project
-5. - [ ] You will produce a poster using the provided template which you will turn in with your final deliverables.
-6. - [ ] You should go over your code during the presentation. Your code should be annotated and in .mlx format and should contain plenty of comments and explanations as well as a block diagram/flowchart of your code. See the Matlab website for sample .mlx files. Your slide deck should contain the same block diagram/flow chart. 
-
-# Your presentation should cover these essentials:
-   1. - [x] Background: applications, motivation (why is this topic/technology important, why should people listen to your presentation)
+- [x] You will have  meetings with the Prof. during the quarter about your project
+- [ ] You will produce a poster using the provided template which you will turn in with your final deliverables.
+- [ ] You should go over your code during the presentation. Your code should be annotated and in .mlx format and should contain plenty of comments and explanations as well as a block diagram/flowchart of your code. See the Matlab website for sample .mlx files. Your slide deck should contain the same block diagram/flow chart. 
+- [ ] Your presentation should cover these essentials:
+    1. - [x] Background: applications, motivation (why is this topic/technology important, why should people listen to your presentation)
         1. Maybe a little bit more on the "why"?
-   2. - [ ] Methods (technical approach)
-        1. - [ ] Need to finish algorithm extension slide / any other details on pre/post processing
-        2. - [ ] Need to add section on cell tracking
-   3. - [ ] Results. You should have simulations results done in Matlab Livescript
-        1. Need to update with current results
-   4. - [ ] Outlook/Discussion/Conclusion: your assessment of this technology and it’s applications 	and suggestions for future R&D
-
+    2. - [x] Methods (technical approach)
+        1. Need to finish 
+    3. - [ ] Results. You should have simulations results done in Matlab Livescript
+    4. - [ ] Outlook/Discussion/Conclusion: your assessment of this technology and it’s applications 	and suggestions for future R&D
+	
 - [ ] For each Topic, the Prof. provides you with one or a few references. This is meant as a starting point. You are expected to explore many other references.
 - [ ] If you have a figure in your slide that you copied from another source (paper or URL), the source needs to appear on the same slide
 
@@ -61,7 +61,6 @@ To run, download the following training datasets from the
 [Cell Tracking Challenge](http://celltrackingchallenge.net/3d-datasets/)
 and place the sets in data/.
 1. Chinese Hamster Ovarian (CHO) nuclei overexpressing GFP-PCNA
-2. MDA231 human breast carcinoma cells infected with a pMSCV vector including the GFP sequence, embedded in a collagen matrix
 
 ## Copyright PST function  using MATLAB is developed in Jalali Lab at
 University of California,  Los Angeles (UCLA).  PST is a spin-off from research
@@ -84,5 +83,5 @@ applications. The software is protected under a US patent.
    Impaired Images", IEEE Access 6 (2018): 1407-1415.
 4. Y. Han, and B. Jalali, "Photonic time-stretched analog-to-digital converter:
    Fundamental concepts and practical considerations", Journal of Lightwave
-   Technology 21, no. 12 (2003): 3085. 
-   
+   Technology 21, no. 12 (2003): 3085.  # Copyright (c) 2016, Jalali Lab All
+                                 rights reserved.
