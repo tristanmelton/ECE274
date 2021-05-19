@@ -11,12 +11,12 @@ function [data] = cell_dataset(root_folder)
     z_dim = length(imfinfo(first_image_path));
     
     % Set up an appropriately shaped tensor and load each file into it
-    data = zeros(xy_dims(1), xy_dims(2), z_dim, n_images, 'uint8');
+    data = zeros(xy_dims(1), xy_dims(2), z_dim, n_images);
     for i = 1:n_images
         filename = sprintf("t%03d.tif", i-1);
         image_path = strcat(root_folder, filename);
         for j = 1:z_dim
-            data(:,:,j,i) = imread(image_path, j);
+            data(:,:,j,i) = im2double(imread(image_path, j));
         end
     end
 end
