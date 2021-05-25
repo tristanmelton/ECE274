@@ -1,5 +1,6 @@
 function [data] = cell_dataset(root_folder)
-    % Imports a Cell Tracking dataset by root folder. Assumes all images
+    % Imports a Cell Tracking dataset by root folder.
+    % Assumes all images
     % to be of the format tXXX.tif. Generates MxNx1xT tensor compatible with
     % implay(). Make sure to leave '/' at the end of root_folder.
     
