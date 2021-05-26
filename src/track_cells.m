@@ -10,10 +10,7 @@ function [centroids] = track_cells(centroids)
     n_dims = length(centroids{1}(1).centroid); % Detect 2D/3D distances.
     for time_slice = 1:n_time_slices
 
-        % Track the refined centroids
-        % TODO: doesn't take into account splits or new centroids drifting in,
-        % need to add that (minimum distance check, approx equal dist check)
-        
+        % Track the refined centroids        
         n_curr_centroids = size(centroids{time_slice}, 2);
        
         % On the first pass, just assign monotonically increasing IDs
