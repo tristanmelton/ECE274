@@ -30,9 +30,15 @@ function [] = visualize_2p5d_T(filename, dataset, centroids, plot_dims)
             % If there are centroids, show them with viscircles
             if ~isempty(centroids)
                 for i = 1:size(centroids{time_slice}, 2)
-                    % if ceil(centroids{time_slice}(i).cell_z) == ngif
-                    viscircles(centroids{time_slice}(i).centroid, 7, ...
-                        'Color', color_table(centroids{time_slice}(i).ID,:));
+                    color = color_table(centroids{time_slice}(i).ID, :);
+                    color_half = [color 0.5];
+                    if ceil(centroids{time_slice}(i).cell_z) == n_plot
+                        viscircles(centroids{time_slice}(i).centroid, 7, ...
+                            'Color', color);
+                    else
+                        viscircles(centroids{time_slice}(i).centroid, 7, ...
+                            'Color', color_half);
+
                     % ct = ct + 1;
                     % end
                 end
