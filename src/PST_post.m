@@ -1,9 +1,5 @@
-%% Threshold the phase output from the PST to find sharp transitions
-function [edges] = PST_post(image, features, handles)
-
-    edges = zeros(size(features));
-    edges(features > handles.Thresh_max) = 1;
-    edges(features < handles.Thresh_min) = 1;
-    edges(image < (max(image, [], 'all') * handles.Thresh_dark)) = 0;
-
+function [volume_edges] = PST_post(volume_pst_features, handles)
+    % Threshold the phase output from the PST to find sharp transitions
+    volume_edges_analog = volume_pst_features ./ max(volume_pst_features, [], [1,2]);
+    volume_edges = volume_edges_analog > handles.Post_Threshold;
 end
