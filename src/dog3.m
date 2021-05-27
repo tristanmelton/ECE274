@@ -1,4 +1,4 @@
-function [scale_space] = dog3(image_gray, sigmas)
+function [scale_space] = dog3(image_gray, sigmas, z_scale)
     % Calculates the scale space of a grayscale image using the Difference
     % of Gaussians method (SIFT preprocessor)
     % sigmas should be an array of positive sigma values for each blur
@@ -14,7 +14,8 @@ function [scale_space] = dog3(image_gray, sigmas)
     % Perform blurs and place into array
     sigmas_hl = fliplr(sigmas);
     for i = 1:length(sigmas_hl)
-        blurs(:,:,:,i) = imgaussfilt3(image_gray, sigmas_hl(i));
+        blurs(:,:,:,i) = imgaussfilt3(image_gray, ...
+            [sigmas_hl(i), sigmas_hl(i), sigmas_hl(i) / z_scale]);
     end
     
     % Scale space is difference across sigmas
