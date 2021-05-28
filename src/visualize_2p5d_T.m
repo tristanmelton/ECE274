@@ -16,7 +16,6 @@ function [] = visualize_2p5d_T(filename, dataset, centroids, plot_dims)
     for time_slice = 1:size(dataset, 4)
 
         % Generate a frame of our GIF
-        % ct = 0;
         f = figure;
         set(gcf, 'Visible', 'off') % Hide plots from Live Script output
         set(gcf, 'Position', [0, 0, 1920, 1080]); % Render in 1080p
@@ -25,22 +24,23 @@ function [] = visualize_2p5d_T(filename, dataset, centroids, plot_dims)
             % Plot the 2D slice into the correct subplot
             subplot(plot_dims(1), plot_dims(2), n_plot);
             title(sprintf("Z index = %d", n_plot));
-            imshow(dataset(:,:,n_plot,time_slice));
+            imshow(double(dataset(:,:,n_plot,time_slice)));
 
             % If there are centroids, show them with viscircles
             if ~isempty(centroids)
                 for i = 1:size(centroids{time_slice}, 2)
                     color = color_table(centroids{time_slice}(i).ID, :);
-                    color_half = [color 0.5];
-                    if ceil(centroids{time_slice}(i).cell_z) == n_plot
-                        viscircles(centroids{time_slice}(i).centroid, 7, ...
-                            'Color', color);
+                    centroid_z_idx = round( ...
+                        centroids{time_slice}(i).centroid(3));
+                    if centroid_z_idx == n_plot
+                        viscircles( ...
+                            round(centroids{time_slice}(i).centroid(1:2)), ...
+                            9, 'Color', color);
                     else
-                        viscircles(centroids{time_slice}(i).centroid, 7, ...
-                            'Color', color_half);
-
-                    % ct = ct + 1;
-                    % end
+                        viscircles( ...
+                            round(centroids{time_slice}(i).centroid(1:2)), ...
+                            3, 'Color', color);
+                    end
                 end
             end
 
@@ -56,27 +56,6 @@ function [] = visualize_2p5d_T(filename, dataset, centroids, plot_dims)
             imwrite(A,map,filename,'gif','WriteMode','append','DelayTime',delay);
         end
         close(f); % No need to show image in live script
-
-        % Second plot with all centroids together. This is deprecated by the
-        % above, can I delete this @Tristan?
-
-        % f2 = figure;
-        % set(gcf,'Visible', 'off') % Hide plots from Live Script output
-        % imshow(dataset(:,:,1,time_slice));
-        % for i = 1:size(centroids{time_slice}, 2)
-        % viscircles(centroids{time_slice}(i).centroid, 7, ...
-        %     'Color', color_table(centroids{time_slice}(i).ID,:));
-        % end
-        % frame = getframe(f2);
-        % im = frame2im(frame);
-        % [A,map] = rgb2ind(im,256);
-        % name = 'cell_track_flat.gif';
-        % if time_slice == 1
-        %     imwrite(A, map,name,'gif','LoopCount',Inf,'DelayTime',delay);
-        % else
-        %     imwrite(A, map,name,'gif','WriteMode','append','DelayTime',delay);
-        % end
-        % close(f2); % No need to show image in live script
 
     end
 end
