@@ -1,19 +1,17 @@
 ## Project TODO
-1.	- [ ] Download the Matlab PST 2D code from Github Jalali Lab repository [7]. Extend the algorithm to 3D (x,y,z) – Write the code for operation of PST on a 3D.
+1.	- [X] Download the Matlab PST 2D code from Github Jalali Lab repository [7]. Extend the algorithm to 3D (x,y,z) – Write the code for operation of PST on a 3D.
 2.	- [ ] Analyze the 3D+T (3D plus time; vidoes) live-cell dataset available here [9]. Select at least two types (and not more than four types) of datasets from this challenge dataset collection. 
-3.	- [ ] Visualize the input and the PST output (edge maps)
-4.	- [ ] Use the PST edge maps to detect cells.
+3.	- [X] Visualize the input and the PST output (edge maps)
+4.	- [X] Use the PST edge maps to detect cells.
 Hint: find center of each cell then track them cells in time. Show x,y,z coordinates vs. time.
 
 
 ## Presentation Stuff
-1. - [ ] Indicate topic/title, your legal name and student ID #, on first page
-    1. Need Mark and Can's Student IDs on first Slide
-2. - [ ] Slides should be numbered
+1. - [X] Indicate topic/title, your legal name and student ID #, on first page
+2. - [X] Slides should be numbered
 3. - [ ] Your slide #2 should be description of how you partitioned the work within your team. What was the role of each team member. For solo teams, this is not needed. 
     1. Exists but need to fill out
-4. - [ ] You will have  meetings with the Prof. during the quarter about your project
-5. - [ ] You will produce a poster using the provided template which you will turn in with your final deliverables.
+4. - [X] You will have  meetings with the Prof. during the quarter about your project
 6. - [ ] You should go over your code during the presentation. Your code should be annotated and in .mlx format and should contain plenty of comments and explanations as well as a block diagram/flowchart of your code. See the Matlab website for sample .mlx files. Your slide deck should contain the same block diagram/flow chart. 
 
 # Your presentation should cover these essentials:
@@ -30,6 +28,7 @@ Hint: find center of each cell then track them cells in time. Show x,y,z coordin
 - [ ] If you have a figure in your slide that you copied from another source (paper or URL), the source needs to appear on the same slide
 
 During your presentation, pay attention to time. You need to finish in the given time. 
+- What is the given time?
 
 ## Deliverables:
 1.	- [ ] Final presentations on Zoom
