@@ -7,7 +7,6 @@ function [centroids] = find_cells(volume_edges, sigmas, z_scale)
     volume_edges = double(volume_edges);
 
     % Calculate the scale space and binarize
-    % Why are we using the edges for this?
     scale_space = dog3( ...
         volume_edges, sigmas, z_scale);
     thresh = 0.5; % Tune so there is one blob per cell
@@ -44,7 +43,7 @@ function [centroids] = find_cells(volume_edges, sigmas, z_scale)
             
             % Generate the number of pixels changed and, if reasonable, add to
             % the list
-            min_pixels_changed = 100; % Chosen at random, tweak if we have trouble detecting small cells
+            min_pixels_changed = 50; % Chosen at random, tweak if we have trouble detecting small cells
             max_pixels_changed = numel(BW1) / 2; % No cell is taking up half the image
             [rpoints, cpoints] = find(BWdiff); % Diff images and get row/col points
             if (length(rpoints) < min_pixels_changed || length(rpoints) > max_pixels_changed)
@@ -56,11 +55,12 @@ function [centroids] = find_cells(volume_edges, sigmas, z_scale)
             % Z centroid as -1 for now
             refined_centroids{z_idx, cent_idx} = [ ... % Centroid in (x, y, z) coords
                 mean(cpoints), mean(rpoints), ...
-                round(starting_centroids(cent_idx, 3))];
+                z_idx];
+                %round(starting_centroids(cent_idx, 3))];
             cell_sizes_vx{z_idx, cent_idx} = length(rpoints);
         end
     end
-    
+
     % Cleanup the cells containing centroids and volumes and matrices
     refined_centroids(cellfun('isempty', refined_centroids)) = [];
     cell_sizes_vx(cellfun('isempty', cell_sizes_vx)) = [];
@@ -90,14 +90,14 @@ function [centroids] = find_cells(volume_edges, sigmas, z_scale)
         cell_sizes_vx{i} = new_cell_size;
     end
     
-    % Cleanup the cells containing centroids and volumes and matrices #2
-    refined_centroids(cellfun('isempty', refined_centroids)) = [];
-    cell_sizes_vx(cellfun('isempty', cell_sizes_vx)) = [];
+   %Cleanup the cells containing centroids and volumes and matrices #2
+   refined_centroids(cellfun('isempty', refined_centroids)) = [];
+   cell_sizes_vx(cellfun('isempty', cell_sizes_vx)) = [];
     
-    % Add to our centroids for this time slice
-    centroids = struct( ...
-        'centroid', refined_centroids, ...
-        'cell_size_vx', cell_sizes_vx, ...
-        'ID', -1); % ID is set later
+   %Add to our centroids for this time slice
+   centroids = struct( ...
+       'centroid', refined_centroids, ...
+       'cell_size_vx', cell_sizes_vx, ...
+       'ID', -1); % ID is set later
 end
 

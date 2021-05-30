@@ -23,8 +23,8 @@ function [] = visualize_2p5d_T(filename, dataset, centroids, plot_dims)
 
             % Plot the 2D slice into the correct subplot
             subplot(plot_dims(1), plot_dims(2), n_plot);
-            title(sprintf("Z index = %d", n_plot));
             imshow(double(dataset(:,:,n_plot,time_slice)));
+            title(sprintf("Z index = %d", n_plot));
 
             % If there are centroids, show them with viscircles
             if ~isempty(centroids)
