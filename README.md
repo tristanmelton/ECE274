@@ -1,10 +1,12 @@
+If you are looking for an explanation of the dependencies, code structure, and
+how to run the code please see the README.txt file.
+
 ## Project TODO
 1.	- [X] Download the Matlab PST 2D code from Github Jalali Lab repository [7]. Extend the algorithm to 3D (x,y,z) – Write the code for operation of PST on a 3D.
 2.	- [ ] Analyze the 3D+T (3D plus time; vidoes) live-cell dataset available here [9]. Select at least two types (and not more than four types) of datasets from this challenge dataset collection. 
 3.	- [X] Visualize the input and the PST output (edge maps)
 4.	- [X] Use the PST edge maps to detect cells.
 Hint: find center of each cell then track them cells in time. Show x,y,z coordinates vs. time.
-
 
 ## Presentation Stuff
 1. - [X] Indicate topic/title, your legal name and student ID #, on first page
@@ -19,7 +21,7 @@ Hint: find center of each cell then track them cells in time. Show x,y,z coordin
         1. Maybe a little bit more on the "why"?
    2. - [ ] Methods (technical approach)
         1. - [ ] Need to finish algorithm extension slide / any other details on pre/post processing
-        2. - [ ] Need to add section on cell tracking
+        2. - [X] Need to add section on cell tracking
    3. - [ ] Results. You should have simulations results done in Matlab Livescript
         1. Need to update with current results
    4. - [ ] Outlook/Discussion/Conclusion: your assessment of this technology and it’s applications 	and suggestions for future R&D
@@ -28,39 +30,18 @@ Hint: find center of each cell then track them cells in time. Show x,y,z coordin
 - [ ] If you have a figure in your slide that you copied from another source (paper or URL), the source needs to appear on the same slide
 
 During your presentation, pay attention to time. You need to finish in the given time. 
-- What is the given time?
+- The given time is 20 minutes for the presentation, 10 minutes for the .mlx walkthrough
 
 ## Deliverables:
 1.	- [ ] Final presentations on Zoom
-2.	- [ ] Participation during presentations by other students
-3.	- [ ] All deliverables (slides, poster, codes, readme file) should be put in a zip file. The zip file should be name as: Team#_topicKeyWord.zip
-4.	- [ ] Poster prepared using the Template and delivered in .pptx format
-5.	- [ ] Your slides in .pptx format. Slides should contain block diagrams/flowcharts of your code. 
+2.	- [X] Participation during presentations by other students
+3.	- [ ] All deliverables (slides, poster, codes, readme file) should be put in a zip file. The zip file should be name as: Team`#_topicKeyWord.zip
+4.	- [ ] Your slides in .pptx format. Slides should contain block diagrams/flowcharts of your code. 
 6.	- [ ] Code annotated and delivered in .mlx LiveScript format. The main file which the user interacts with (and which calls the functions) should be called “main.mlx”
-7.	- [ ] Readme file explaining the code delivered in .docx or .txt
+7.	- [X] Readme file explaining the code delivered in .docx or .txt
 
 
 You should combine all your codes into one zip file and combine that with the .pptx and .docs files into a single master .zip  (do not use .rar format)
-
-
-
-
-
-
-Image processing toolbox is needed to run this function, function has been
-tested on MATLAB R2013a on a computer with Windows 7, 64-bit operating system.
-The code uses IMOVERLAY function developed by Steven L. Eddins for
-visualization of detected features.  The test image is loaded in line #8 in the
-test_script_PST.m file. The test images can be called from
-the Test_Images directory and then, set the file name in the code on line #8.
-The images can be color or greyscale. However, PST operation occurs on color
-images only after converting them to greyscale.
-
-To run, download the following training datasets from the
-[Cell Tracking Challenge](http://celltrackingchallenge.net/3d-datasets/)
-and place the sets in data/.
-1. Chinese Hamster Ovarian (CHO) nuclei overexpressing GFP-PCNA
-2. MDA231 human breast carcinoma cells infected with a pMSCV vector including the GFP sequence, embedded in a collagen matrix
 
 ## Copyright PST function  using MATLAB is developed in Jalali Lab at
 University of California,  Los Angeles (UCLA).  PST is a spin-off from research
