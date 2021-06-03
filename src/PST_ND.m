@@ -65,6 +65,8 @@ function [features, kernel] = PST_ND(image, handles)
     % 3. M. Suthar, H. Asghari, and B. Jalali, "Feature Enhancement in Visually Impaired Images", IEEE Access 6 (2018): 1407-1415.
     % 4. Y. Han, and B. Jalali, "Photonic time-stretched analog-to-digital converter: Fundamental concepts and practical considerations", Journal of Lightwave Technology 21, no. 12 (2003): 3085.
 
+    %Dependencies - None
+    
     % Get image shape and dimensions
     image_size = size(image);
     ndims = length(image_size);

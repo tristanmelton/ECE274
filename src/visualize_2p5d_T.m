@@ -6,6 +6,8 @@ function [] = visualize_2p5d_T(filename, dataset, centroids, plot_dims)
     %    visualize 2D slices of our 3D dataset in the same figure for each time
     %    slice and compile into a single animated .gif file.
 
+    % Dependencies - Image Processing Toolbox (imshow, viscircles, imwrite, frame2im) 
+    
     % Check the plot dimensions for subplot are valid
     assert(all(size(plot_dims) == [1, 2]));
 

@@ -3,6 +3,9 @@ function [centroids] = find_cells(volume_edges, sigmas, z_scale)
     %   Given an edge map derived from the PST, find a single centroid and measure
     %   of volume per cell as an array of structs.
 
+    %Dependencies - Image Processing Toolbox (dog3.m, bwconncomp, regionprops, imclose, imfill)
+    %               Statistics and Machine Learning Toolbox (knnsearch)
+    
     % Convert edges back to doubles if binarized
     volume_edges = double(volume_edges);
 

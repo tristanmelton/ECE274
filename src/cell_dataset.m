@@ -4,6 +4,8 @@ function [data] = cell_dataset(root_folder)
     % to be of the format tXXX.tif. Generates MxNx1xT tensor compatible with
     % implay(). Make sure to leave '/' at the end of root_folder.
     
+    %Dependencies - Image Processing Toolbox (im2double)
+    
     % Get number of images in the folder and read the first image to get
     % the shape
     n_images = length(dir(root_folder)) - 2; % skip '.', '..'. TODO: filter?

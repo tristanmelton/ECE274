@@ -1,3 +1,5 @@
+%Dependencies - Image Processing Toolbox (medfilt3)
+
 function [volume_edges] = PST_post(volume_pst_features, handles)
 
     % Median filter the image to remove speckles inside cells

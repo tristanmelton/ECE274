@@ -6,6 +6,8 @@ function [scale_space] = dog3(image_gray, sigmas, z_scale)
     %
     % Example:
     % scale_space = dog3(image, [4, 9, 16, 25, 36, 49, 64]);
+    
+    %Dependencies - Image Processing Toolbox (imgaussfilt3)
 
     % Set up our output vector for gaussian blurs
     [size_x, size_y, size_z] = size(image_gray);

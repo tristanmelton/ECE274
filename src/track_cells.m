@@ -5,6 +5,8 @@ function [centroids] = track_cells(centroids)
     %    slices using a scoring algorithm that considers euclidean distance and
     %    change in volume over time.
 
+    % Dependencies - Statistics and Machine Learning Toolbox (knnsearch)
+    
     % Iterate through all given time slices
     n_time_slices = length(centroids);
     n_dims = length(centroids{1}(1).centroid); % Detect 2D/3D distances.

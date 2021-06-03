@@ -1,3 +1,5 @@
+%Dependencies - Image Processing Toolbox (medfilt2, adapthisteq)
+
 function [volume] = PST_pre(volume, handles)
     % Increase the contrast of the PST input to better find edges in dark
     % parts of the image.
