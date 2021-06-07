@@ -8,15 +8,15 @@ execution.
 
 The datasets required can be downloaded from
 http://celltrackingchallenge.net/3d-datasets/. The 'Fluo-C3DH-A549' and
-'Fluo-N3DH-CHO' training datasets are required to run the script. They were
+'Fluo-N3DH-CHO' challenge datasets are required to run the script. They were
 chosen due to their relative size and runtime. Once downloaded, extract to the
 'data/' folder such that the 'data/Fluo-C3DH-A549' and 'data/Fluo-N3DH-CHO'
 folders exist. Note that Mac or Linux devices may have permissions issues when
 extracting the datasets; it is recommended to extract as root, change ownership
 to your user, and recursively give the 'data/' folder 755 permissions.
 
-Fluo-C3DH-A549: http://data.celltrackingchallenge.net/training-datasets/Fluo-C3DH-A549.zip
-Fluo-N3DH-CHO: http://data.celltrackingchallenge.net/training-datasets/Fluo-N3DH-CHO.zip
+Fluo-C3DH-A549: http://data.celltrackingchallenge.net/challenge-datasets/Fluo-C3DH-A549.zip
+Fluo-N3DH-CHO: http://data.celltrackingchallenge.net/challenge-datasets/Fluo-N3DH-CHO.zip
 
 Code Structure
 ==============
