@@ -8,3 +8,4 @@ tracking_pst_A529.gif filter=lfs diff=lfs merge=lfs -text
 tracking_pst_CHO.gif filter=lfs diff=lfs merge=lfs -text
 tracking_pst_MDA231.gif filter=lfs diff=lfs merge=lfs -text
 *.png filter=lfs diff=lfs merge=lfs -text
+Team4_phys_algo.zip filter=lfs diff=lfs merge=lfs -text
